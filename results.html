@@ -1,0 +1,832 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+	var chart = new CanvasJS.Chart("chartContainer", {
+		animationEnabled: true,
+		title:{
+			text: "Latency Performance (TCP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Round Trip Time (in ms)"
+		},
+		data: [{
+			type: "scatter",
+			toolTipContent: "<span style=\"color:#4F81BC \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			name: "1 byte",
+			showInLegend: true,
+			dataPoints: [
+				{ x: 1, y: 14.696533 },
+				{ x: 2, y: 3.288747 },
+				{ x: 3, y: 2.9376 },
+				{ x: 4, y: 4.626774 },
+				{ x: 5, y: 4.21504 },
+				{ x: 6, y: 4.054613 },
+				{ x: 7, y: 4.426667 },
+				{ x: 8, y: 4.325973 },
+				{ x: 9, y: 3.986346 },
+				{ x: 10, y: 3.351466 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "64 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 5.3056 },
+				{ x: 2, y: 3.574186 },
+				{ x: 3, y: 5.099093 },
+				{ x: 4, y: 4.399787 },
+				{ x: 5, y: 4.121173 },
+				{ x: 6, y: 5.9584 },
+				{ x: 7, y: 5.17376 },
+				{ x: 8, y: 4.09088 },
+				{ x: 9, y: 3.95776 },
+				{ x: 10, y: 4.462934 }
+			]
+		},{
+			type: "scatter",
+			name: "1024 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 4.82688 },
+				{ x: 2, y: 5.080746 },
+				{ x: 3, y: 6.088533 },
+				{ x: 4, y: 7.8912 },
+				{ x: 5, y: 4.62208 },
+				{ x: 6, y: 4.432213 },
+				{ x: 7, y: 3.581013 },
+				{ x: 8, y: 4.192426 },
+				{ x: 9, y: 17.748907 },
+				{ x: 10, y: 11.586987 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer2", {
+		animationEnabled: true,
+		title:{
+			text: "Throughput Performance (TCP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Throughput (Mbps)"
+		},
+		data: [{
+			type: "scatter",
+			name: "1 kilobyte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 1.0141710115443086 },
+				{ x: 2, y: 2.1404109589041096 },
+				{ x: 3, y: 1.5268737412834594 },
+				{ x: 4, y: 2.5642735156702754 },
+				{ x: 5, y: 3.1166920677070182 },
+				{ x: 6, y: 1.8469267139479906 },
+				{ x: 7, y: 1.935385228752857 },
+				{ x: 8, y: 2.350800565132456 },
+				{ x: 9, y: 3.7560096153846154 },
+				{ x: 10, y: 1.4431972013519871 }
+			]
+		},{
+			type: "scatter",
+			name: "16 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 23.65929433197243 },
+				{ x: 2, y: 57.07762557077625 },
+				{ x: 3, y: 35.21126760563381 },
+				{ x: 4, y: 52.74261603375527 },
+				{ x: 5, y: 26.371308016877634 },
+				{ x: 6, y: 48.70134811419249 },
+				{ x: 7, y: 32.05128205128205 },
+				{ x: 8, y: 45.12635379061372 },
+				{ x: 9, y: 32.779765051034 },
+				{ x: 10, y: 20.128824476650564 }
+			]
+		},{
+			type: "scatter",
+			name: "64 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#AA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 128.09581567012125 },
+				{ x: 2, y: 176.67844522968198 },
+				{ x: 3, y: 228.65880890197323 },
+				{ x: 4, y: 213.06841826662185 },
+				{ x: 5, y: 258.17486506329317 },
+				{ x: 6, y: 153.0609804512429 },
+				{ x: 7, y: 124.89608255631059 },
+				{ x: 8, y: 220.9128533311242 },
+				{ x: 9, y: 105.189456071897 },
+				{ x: 10, y: 83.28713500063766 }
+			]
+		},{
+			type: "scatter",
+			name: "256 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#DA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 513.2595389084814 },
+				{ x: 2, y: 641.7117661361682 },
+				{ x: 3, y: 482.70283418214865 },
+				{ x: 4, y: 769.2307692307692 },
+				{ x: 5, y: 291.12081513828235 },
+				{ x: 6, y: 653.5947712418301 },
+				{ x: 7, y: 1125.7052147414615 },
+				{ x: 8, y: 96.52509652509652 },
+				{ x: 9, y: 448.43049327354265 },
+				{ x: 10, y: 528.1693773171884 }
+			]
+		},{
+			type: "scatter",
+			name: "1 megabyte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#FA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 2240.680449839007 },
+				{ x: 2, y: 3461.9685445538043 },
+				{ x: 3, y: 1855.7007125890734 },
+				{ x: 4, y: 1724.6136865342164 },
+				{ x: 5, y: 2271.0755813953488 },
+				{ x: 6, y: 2522.8761797599736 },
+				{ x: 7, y: 1113.9492061440983 },
+				{ x: 8, y: 1393.4310871688685 },
+				{ x: 9, y: 2057.7232526843 },
+				{ x: 10, y: 1585.758618994534 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer3", {
+		animationEnabled: true,
+		title:{
+			text: "Latency Performance (UDP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Latency (ms)"
+		},
+		data: [{
+			type: "scatter",
+			name: "1 byte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 10.336 },
+				{ x: 2, y: 3.314346 },
+				{ x: 3, y: 4.029867 },
+				{ x: 4, y: 3.79904 },
+				{ x: 5, y: 4.0192 },
+				{ x: 6, y: 6.062933 },
+				{ x: 7, y: 5.77152 },
+				{ x: 8, y: 6.356053 },
+				{ x: 9, y: 6.4896 },
+				{ x: 10, y: 4.628907 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "64 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 4.60416 },
+				{ x: 2, y: 4.06016 },
+				{ x: 3, y: 4.54144 },
+				{ x: 4, y: 8.00256 },
+				{ x: 5, y: 0.041387 },
+				{ x: 6, y: 4.255147 },
+				{ x: 7, y: 4.86016 },
+				{ x: 8, y: 4.0064 },
+				{ x: 9, y: 4.035413 },
+				{ x: 10, y: 6.260053 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "1024 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 4.564053 },
+				{ x: 2, y: 5.586773 },
+				{ x: 3, y: 14.31424 },
+				{ x: 4, y: 5.802667 },
+				{ x: 5, y: 3.9872 },
+				{ x: 6, y: 3.205546 },
+				{ x: 7, y: 4.55168 },
+				{ x: 8, y: 3.405227 },
+				{ x: 9, y: 8.640427 },
+				{ x: 10, y: 3.8464 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer4", {
+		animationEnabled: true,
+		title:{
+			text: "Message Size and Number of Messages vs Time"
+		},
+		axisX: {
+			title:"Message Size"
+		},
+		axisY:{
+			title: "Time (ms)"
+		},
+		data: [{
+			type: "scatter",
+			name: "TCP",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Message Size:</b> {x} bytes <br/><b> Time:</b></span> {y} ms",
+			dataPoints: [
+	           { x: 256, y: 4676.95488 },
+				{ x: 512, y: 7814.06336 },
+				{ x: 1024, y: 17792.778666 }
+	 		]
+	     }
+	,{
+			type: "scatter",
+			name: "UDP",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Message Size:</b> {x} bytes<br/><b> Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 256, y: 5223.465813 },
+				{ x: 512, y: 9225.867947 },
+				{ x: 1024, y: 18386.210133 }
+			]
+		}]
+	});
+	chart.render();
+
+	var chart = new CanvasJS.Chart("chartContainer5", {
+		animationEnabled: true,
+		title:{
+			text: "Latency Performance (TCP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Round Trip Time (in ms)"
+		},
+		data: [{
+			type: "scatter",
+			toolTipContent: "<span style=\"color:#4F81BC \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			name: "1 byte",
+			showInLegend: true,
+			dataPoints: [
+				{ x: 1, y: 1.373883 },
+				{ x: 2, y: 0.594955 },
+				{ x: 3, y: 0.353329 },
+				{ x: 4, y: 0.327962 },
+				{ x: 5, y: 0.362242 },
+				{ x: 6, y: 0.219037 },
+				{ x: 7, y: 0.308514 },
+				{ x: 8, y: 0.25101 },
+				{ x: 9, y: 0.255523 },
+				{ x: 10, y: 0.247861 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "64 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.279195 },
+				{ x: 2, y: 0.290501 },
+				{ x: 3, y: 0.275034 },
+				{ x: 4, y: 0.280735 },
+				{ x: 5, y: 0.311363 },
+				{ x: 6, y: 0.435288 },
+				{ x: 7, y: 0.26038 },
+				{ x: 8, y: 0.291218 },
+				{ x: 9, y: 0.275881 },
+				{ x: 10, y: 0.269536 }
+			]
+		},{
+			type: "scatter",
+			name: "1024 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.726867 },
+				{ x: 2, y: 0.660163 },
+				{ x: 3, y: 0.49869 },
+				{ x: 4, y: 0.463306 },
+				{ x: 5, y: 0.454506 },
+				{ x: 6, y: 0.590229 },
+				{ x: 7, y: 0.559456 },
+				{ x: 8, y: 0.439924 },
+				{ x: 9, y: 0.457819 },
+				{ x: 10, y: 0.432432 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer6", {
+		animationEnabled: true,
+		title:{
+			text: "Throughput Performance (TCP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Throughput (Mbps)"
+		},
+		data: [{
+			type: "scatter",
+			name: "1 kilobyte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 5.687052855469239 },
+				{ x: 2, y: 18.04598115999567 },
+				{ x: 3, y: 16.764740397994938 },
+				{ x: 4, y: 21.198566976872364 },
+				{ x: 5, y: 22.147413182140326 },
+				{ x: 6, y: 22.787867739215642 },
+				{ x: 7, y: 28.850869853726092 },
+				{ x: 8, y: 23.894291653723926 },
+				{ x: 9, y: 16.310020876826723 },
+				{ x: 10, y: 29.530756282668403 }
+			]
+		},{
+			type: "scatter",
+			name: "16 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 548.9039075096915 },
+				{ x: 2, y: 547.6263819009481 },
+				{ x: 3, y: 616.2141344117081 },
+				{ x: 4, y: 619.0513038768088 },
+				{ x: 5, y: 627.9434850863422 },
+				{ x: 6, y: 663.4324335530954 },
+				{ x: 7, y: 492.1259842519685 },
+				{ x: 8, y: 642.4154822131214 },
+				{ x: 9, y: 645.9165960195389 },
+				{ x: 10, y: 645.9948320413437 }
+			]
+		},{
+			type: "scatter",
+			name: "64 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#AA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 2510.4930765308122 },
+				{ x: 2, y: 2580.124974803467 },
+				{ x: 3, y: 2620.480694427384 },
+				{ x: 4, y: 2617.479857674533 },
+				{ x: 5, y: 2631.4707454463223 },
+				{ x: 6, y: 2588.7873149421566 },
+				{ x: 7, y: 2655.8220599219853 },
+				{ x: 8, y: 2377.767870411651 },
+				{ x: 9, y: 2598.2461838259173 },
+				{ x: 10, y: 2735.627270784356 }
+			]
+		},{
+			type: "scatter",
+			name: "256 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#DA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 10137.810866466021 },
+				{ x: 2, y: 9453.820303556262 },
+				{ x: 3, y: 10941.106077442517 },
+				{ x: 4, y: 8444.664357578757 },
+				{ x: 5, y: 8917.374947749757 },
+				{ x: 6, y: 8136.024153821708 },
+				{ x: 7, y: 9816.703734949 },
+				{ x: 8, y: 9350.573453137555 },
+				{ x: 9, y: 13196.556523532143 },
+				{ x: 10, y: 13472.266077255026 }
+			]
+		},{
+			type: "scatter",
+			name: "1 megabyte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#FA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 48520.135856380395 },
+				{ x: 2, y: 53242.466191033964 },
+				{ x: 3, y: 53307.74561543792 },
+				{ x: 4, y: 51153.511688577426 },
+				{ x: 5, y: 53435.93031954686 },
+				{ x: 6, y: 53421.65713980447 },
+				{ x: 7, y: 54318.30526887561 },
+				{ x: 8, y: 44328.206037501666 },
+				{ x: 9, y: 52896.05924358635 },
+				{ x: 10, y: 53324.80136511491 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer7", {
+		animationEnabled: true,
+		title:{
+			text: "Latency Performance (UDP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Latency (ms)"
+		},
+		data: [{
+			type: "scatter",
+			name: "1 byte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.19507 },
+				{ x: 2, y: 0.178252 },
+				{ x: 3, y: 0.166507 },
+				{ x: 4, y: 0.166667 },
+				{ x: 5, y: 0.171409 },
+				{ x: 6, y: 0.168268 },
+				{ x: 7, y: 0.645681 },
+				{ x: 8, y: 0.166235 },
+				{ x: 9, y: 0.161455 },
+				{ x: 10, y: 0.162374 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "64 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.171873 },
+				{ x: 2, y: 0.097621 },
+				{ x: 3, y: 0.097792 },
+				{ x: 4, y: 0.192814 },
+				{ x: 5, y: 0.163828 },
+				{ x: 6, y: 0.164006 },
+				{ x: 7, y: 0.164207 },
+				{ x: 8, y: 0.160239 },
+				{ x: 9, y: 0.160006 },
+				{ x: 10, y: 0.163985 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "1024 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.190419 },
+				{ x: 2, y: 0.161531 },
+				{ x: 3, y: 0.158631 },
+				{ x: 4, y: 0.161486 },
+				{ x: 5, y: 0.160601 },
+				{ x: 6, y: 0.160714 },
+				{ x: 7, y: 0.15863 },
+				{ x: 8, y: 0.15963 },
+				{ x: 9, y: 0.15874 },
+				{ x: 10, y: 0.158254 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer8", {
+		animationEnabled: true,
+		title:{
+			text: "Message Size and Number of Messages vs Time"
+		},
+		axisX: {
+			title:"Message Size"
+		},
+		axisY:{
+			title: "Time (ms)"
+		},
+		data: [{
+			type: "scatter",
+			name: "TCP",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Message Size:</b> {x} bytes <br/><b> Time:</b></span> {y} ms",
+			dataPoints: [
+	           { x: 256, y: 157.864352 },
+				{ x: 512, y: 250.547965 },
+				{ x: 1024, y: 482.737218 }
+	 		]
+	     }
+	,{
+			type: "scatter",
+			name: "UDP",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Message Size:</b> {x} bytes<br/><b> Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 256, y: 168.927608 },
+				{ x: 512, y: 273.664116 },
+				{ x: 1024, y: 485.560693 }
+			]
+		}]
+	});
+	chart.render();
+
+	var chart = new CanvasJS.Chart("chartContainer9", {
+		animationEnabled: true,
+		title:{
+			text: "Latency Performance (TCP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Round Trip Time (in ms)"
+		},
+		data: [{
+			type: "scatter",
+			toolTipContent: "<span style=\"color:#4F81BC \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			name: "1 byte",
+			showInLegend: true,
+			dataPoints: [
+				{ x: 1, y: 3.128753 },
+				{ x: 2, y: 0.361162 },
+				{ x: 3, y: 0.444917 },
+				{ x: 4, y: 0.495892 },
+				{ x: 5, y: 0.909432 },
+				{ x: 6, y: 0.470958 },
+				{ x: 7, y: 0.493522 },
+				{ x: 8, y: 0.486077 },
+				{ x: 9, y: 0.482904 },
+				{ x: 10, y: 0.325823 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "64 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.767542 },
+				{ x: 2, y: 0.466425 },
+				{ x: 3, y: 0.466354 },
+				{ x: 4, y: 0.434352 },
+				{ x: 5, y: 0.565569 },
+				{ x: 6, y: 0.447431 },
+				{ x: 7, y: 0.404096 },
+				{ x: 8, y: 0.467074 },
+				{ x: 9, y: 0.534489 },
+				{ x: 10, y: 0.61763 }
+			]
+		},{
+			type: "scatter",
+			name: "1024 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Round Trip Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 1.36795 },
+				{ x: 2, y: 1.500574 },
+				{ x: 3, y: 1.596049 },
+				{ x: 4, y: 1.551877 },
+				{ x: 5, y: 1.41504 },
+				{ x: 6, y: 1.391716 },
+				{ x: 7, y: 1.411804 },
+				{ x: 8, y: 1.404214 },
+				{ x: 9, y: 1.420922 },
+				{ x: 10, y: 1.385069 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer10", {
+		animationEnabled: true,
+		title:{
+			text: "Throughput Performance (TCP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Throughput (Mbps)"
+		},
+		data: [{
+			type: "scatter",
+			name: "1 kilobyte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 7.259949761147653 },
+				{ x: 2, y: 24.759216618386194 },
+				{ x: 3, y: 26.455726341966717 },
+				{ x: 4, y: 27.282896352276754 },
+				{ x: 5, y: 27.321657878200053 },
+				{ x: 6, y: 27.173174641993423 },
+				{ x: 7, y: 23.957834211787258 },
+				{ x: 8, y: 29.257731355510696 },
+				{ x: 9, y: 31.61555485298767 },
+				{ x: 10, y: 30.441400304414003 }
+			]
+		},{
+			type: "scatter",
+			name: "16 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 482.363581549593 },
+				{ x: 2, y: 510.6926268751995 },
+				{ x: 3, y: 522.8587301068593 },
+				{ x: 4, y: 512.5084083410743 },
+				{ x: 5, y: 500.2814082921644 },
+				{ x: 6, y: 513.3964383122093 },
+				{ x: 7, y: 435.4807980185624 },
+				{ x: 8, y: 493.18784291967205 },
+				{ x: 9, y: 537.6705423751597 },
+				{ x: 10, y: 535.5648535564853 }
+			]
+		},{
+			type: "scatter",
+			name: "64 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#AA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 2061.457192552986 },
+				{ x: 2, y: 2186.3150343319785 },
+				{ x: 3, y: 2178.2043427949084 },
+				{ x: 4, y: 2091.024928937825 },
+				{ x: 5, y: 1947.8345558024166 },
+				{ x: 6, y: 2124.48132780083 },
+				{ x: 7, y: 2157.9337784071754 },
+				{ x: 8, y: 1994.7015739442106 },
+				{ x: 9, y: 2213.077907258204 },
+				{ x: 10, y: 2173.913043478261 }
+			]
+		},{
+			type: "scatter",
+			name: "256 kilobytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#DA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 5557.002691673179 },
+				{ x: 2, y: 8101.26582278481 },
+				{ x: 3, y: 8922.036733698114 },
+				{ x: 4, y: 6570.5045942200095 },
+				{ x: 5, y: 8553.576798422935 },
+				{ x: 6, y: 8851.393402945854 },
+				{ x: 7, y: 3301.564374056926 },
+				{ x: 8, y: 8971.752996425317 },
+				{ x: 9, y: 7398.630097396029 },
+				{ x: 10, y: 7499.853518485967 }
+			]
+		},{
+			type: "scatter",
+			name: "1 megabyte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#FA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Throughput:</b></span> {y} bpms",
+			dataPoints: [
+				{ x: 1, y: 28779.462975220886 },
+				{ x: 2, y: 32515.03820516989 },
+				{ x: 3, y: 32117.16341212744 },
+				{ x: 4, y: 32197.823427136325 },
+				{ x: 5, y: 28130.186503136516 },
+				{ x: 6, y: 32885.00115097504 },
+				{ x: 7, y: 34570.97421005324 },
+				{ x: 8, y: 27825.69981635038 },
+				{ x: 9, y: 33211.557622052474 },
+				{ x: 10, y: 31392.246115209546 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer11", {
+		animationEnabled: true,
+		title:{
+			text: "Latency Performance (UDP)"
+		},
+		axisX: {
+			title:"Transmission Attempt"
+		},
+		axisY:{
+			title: "Latency (ms)"
+		},
+		data: [{
+			type: "scatter",
+			name: "1 byte",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.388809 },
+				{ x: 2, y: 0.222917 },
+				{ x: 3, y: 0.201373 },
+				{ x: 4, y: 0.194601 },
+				{ x: 5, y: 0.198617 },
+				{ x: 6, y: 0.331228 },
+				{ x: 7, y: 0.709895 },
+				{ x: 8, y: 0.356079 },
+				{ x: 9, y: 0.197955 },
+				{ x: 10, y: 0.196482 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "64 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.239977 },
+				{ x: 2, y: 0.185649 },
+				{ x: 3, y: 0.192354 },
+				{ x: 4, y: 0.184566 },
+				{ x: 5, y: 0.204267 },
+				{ x: 6, y: 0.155864 },
+				{ x: 7, y: 0.179408 },
+				{ x: 8, y: 0.184234 },
+				{ x: 9, y: 0.163817 },
+				{ x: 10, y: 0.374452 }
+			]
+		}
+	,{
+			type: "scatter",
+			name: "1024 bytes",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Transmission Attempt:</b> {x} <br/><b> Latency:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 1, y: 0.205958 },
+				{ x: 2, y: 0.328703 },
+				{ x: 3, y: 0.248239 },
+				{ x: 4, y: 0.281124 },
+				{ x: 5, y: 0.282503 },
+				{ x: 6, y: 0.271395 },
+				{ x: 7, y: 0.284335 },
+				{ x: 8, y: 0.300498 },
+				{ x: 9, y: 0.268438 },
+				{ x: 10, y: 0.287839 }
+			]
+		}]
+	});
+	chart.render();
+	var chart = new CanvasJS.Chart("chartContainer12", {
+		animationEnabled: true,
+		title:{
+			text: "Message Size and Number of Messages vs Time"
+		},
+		axisX: {
+			title:"Message Size"
+		},
+		axisY:{
+			title: "Time (ms)"
+		},
+		data: [{
+			type: "scatter",
+			name: "TCP",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Message Size:</b> {x} bytes <br/><b> Time:</b></span> {y} ms",
+			dataPoints: [
+	           { x: 256, y: 451.710191 },
+				{ x: 512, y: 904.059122 },
+				{ x: 1024, y: 1354.785634 }
+	 		]
+	     }
+	,{
+			type: "scatter",
+			name: "UDP",
+			showInLegend: true,
+			toolTipContent: "<span style=\"color:#BA504E \"><b>{name}</b></span><br/><b> Message Size:</b> {x} bytes<br/><b> Time:</b></span> {y} ms",
+			dataPoints: [
+				{ x: 256, y: 276.158006 },
+				{ x: 512, y: 454.102851 },
+				{ x: 1024, y: 902.363648 }
+			]
+		}]
+	});
+	chart.render();
+}
+</script>
+</head>
+<body>
+	<h2> -------------------------------------------- LAPTOP-DJOIR9 to MACBOOK, off campus --------------------------------------------</h2>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer" style="height: 370px; width: 45%; display: inline-block"></div>
+<div id="chartContainer2" style="height: 370px; width: 45%; display: inline-block"></div><br/><br/>
+<div id="chartContainer3" style="height: 370px; width: 45%; display: inline-block"></div>
+<div id="chartContainer4" style="height: 370px; width: 45%; display: inline-block"></div>
+<h2> -------------------------------------------- pi to moxie, wireless --------------------------------------------</h2>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer5" style="height: 370px; width: 45%; display: inline-block"></div>
+<div id="chartContainer6" style="height: 370px; width: 45%; display: inline-block"></div><br/><br/>
+<div id="chartContainer7" style="height: 370px; width: 45%; display: inline-block"></div>
+<div id="chartContainer8" style="height: 370px; width: 45%; display: inline-block"></div>
+<h2> -------------------------------------------- pi to altair, wireless --------------------------------------------</h2>
+<div id="chartContainer9" style="height: 370px; width: 45%; display: inline-block"></div>
+<div id="chartContainer10" style="height: 370px; width: 45%; display: inline-block"></div><br/><br/>
+<div id="chartContainer11" style="height: 370px; width: 45%; display: inline-block"></div>
+<div id="chartContainer12" style="height: 370px; width: 45%; display: inline-block"></div>
+</body>
+</html>
